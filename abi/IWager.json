@@ -1,0 +1,672 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_players",
+          "type": "address[]"
+        }
+      ],
+      "name": "addPlayers",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "balance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "payWinner",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_betHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "provideOutcome",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_players",
+          "type": "address[]"
+        }
+      ],
+      "name": "removePlayers",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "setBetAmount",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_betHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "submitBet",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "addPlayers(address[])": "493ff1d6",
+    "balance()": "b69ef8a8",
+    "payWinner()": "be71248a",
+    "provideOutcome(bytes32)": "a62d1a1b",
+    "removePlayers(address[])": "dc398933",
+    "setBetAmount(uint256)": "53a79d74",
+    "submitBet(bytes32)": "d99ccc2d"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_players\",\"type\":\"address[]\"}],\"name\":\"addPlayers\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"balance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"payWinner\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_betHash\",\"type\":\"bytes32\"}],\"name\":\"provideOutcome\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_players\",\"type\":\"address[]\"}],\"name\":\"removePlayers\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"setBetAmount\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_betHash\",\"type\":\"bytes32\"}],\"name\":\"submitBet\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/IWager.sol\":\"IWager\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":chainlink-brownie-contracts/=lib/chainlink-brownie-contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"src/IWager.sol\":{\"keccak256\":\"0xf9d5088bf13e708ef75782b4ad4846e08425a669ecf3523a14d3250e9e2fe7f8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://06f29e3c343848021e8cc7c2a9217fafe01bd702e14a66352936cde25b63a24e\",\"dweb:/ipfs/QmaXbWU1LGS7cNUFLLBaoae3eJeV2xZdU1yef5Hhkhjqas\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address[]",
+              "name": "_players",
+              "type": "address[]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "addPlayers"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "balance",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "payable",
+          "type": "function",
+          "name": "payWinner"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "_betHash",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "provideOutcome"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address[]",
+              "name": "_players",
+              "type": "address[]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "removePlayers"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "_amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setBetAmount"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "_betHash",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function",
+          "name": "submitBet"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "chainlink-brownie-contracts/=lib/chainlink-brownie-contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/IWager.sol": "IWager"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/IWager.sol": {
+        "keccak256": "0xf9d5088bf13e708ef75782b4ad4846e08425a669ecf3523a14d3250e9e2fe7f8",
+        "urls": [
+          "bzz-raw://06f29e3c343848021e8cc7c2a9217fafe01bd702e14a66352936cde25b63a24e",
+          "dweb:/ipfs/QmaXbWU1LGS7cNUFLLBaoae3eJeV2xZdU1yef5Hhkhjqas"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/IWager.sol",
+    "id": 45599,
+    "exportedSymbols": {
+      "IWager": [
+        45598
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "33:445:36",
+    "nodes": [
+      {
+        "id": 45562,
+        "nodeType": "PragmaDirective",
+        "src": "33:24:36",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".17"
+        ]
+      },
+      {
+        "id": 45598,
+        "nodeType": "ContractDefinition",
+        "src": "59:418:36",
+        "nodes": [
+          {
+            "id": 45568,
+            "nodeType": "FunctionDefinition",
+            "src": "82:56:36",
+            "nodes": [],
+            "functionSelector": "493ff1d6",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addPlayers",
+            "nameLocation": "91:10:36",
+            "parameters": {
+              "id": 45566,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45565,
+                  "mutability": "mutable",
+                  "name": "_players",
+                  "nameLocation": "119:8:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45568,
+                  "src": "102:25:36",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 45563,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "102:7:36",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 45564,
+                    "nodeType": "ArrayTypeName",
+                    "src": "102:9:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "101:27:36"
+            },
+            "returnParameters": {
+              "id": 45567,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "137:0:36"
+            },
+            "scope": 45598,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 45574,
+            "nodeType": "FunctionDefinition",
+            "src": "144:59:36",
+            "nodes": [],
+            "functionSelector": "dc398933",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removePlayers",
+            "nameLocation": "153:13:36",
+            "parameters": {
+              "id": 45572,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45571,
+                  "mutability": "mutable",
+                  "name": "_players",
+                  "nameLocation": "184:8:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45574,
+                  "src": "167:25:36",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 45569,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "167:7:36",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 45570,
+                    "nodeType": "ArrayTypeName",
+                    "src": "167:9:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "166:27:36"
+            },
+            "returnParameters": {
+              "id": 45573,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "202:0:36"
+            },
+            "scope": 45598,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 45579,
+            "nodeType": "FunctionDefinition",
+            "src": "209:48:36",
+            "nodes": [],
+            "functionSelector": "53a79d74",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setBetAmount",
+            "nameLocation": "218:12:36",
+            "parameters": {
+              "id": 45577,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45576,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "239:7:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45579,
+                  "src": "231:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45575,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "231:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "230:17:36"
+            },
+            "returnParameters": {
+              "id": 45578,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "256:0:36"
+            },
+            "scope": 45598,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 45584,
+            "nodeType": "FunctionDefinition",
+            "src": "263:54:36",
+            "nodes": [],
+            "functionSelector": "d99ccc2d",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "submitBet",
+            "nameLocation": "272:9:36",
+            "parameters": {
+              "id": 45582,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45581,
+                  "mutability": "mutable",
+                  "name": "_betHash",
+                  "nameLocation": "290:8:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45584,
+                  "src": "282:16:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 45580,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "282:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "281:18:36"
+            },
+            "returnParameters": {
+              "id": 45583,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "316:0:36"
+            },
+            "scope": 45598,
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 45589,
+            "nodeType": "FunctionDefinition",
+            "src": "323:51:36",
+            "nodes": [],
+            "functionSelector": "a62d1a1b",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "provideOutcome",
+            "nameLocation": "332:14:36",
+            "parameters": {
+              "id": 45587,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45586,
+                  "mutability": "mutable",
+                  "name": "_betHash",
+                  "nameLocation": "355:8:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45589,
+                  "src": "347:16:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 45585,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "347:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "346:18:36"
+            },
+            "returnParameters": {
+              "id": 45588,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "373:0:36"
+            },
+            "scope": 45598,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 45594,
+            "nodeType": "FunctionDefinition",
+            "src": "380:51:36",
+            "nodes": [],
+            "functionSelector": "b69ef8a8",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "balance",
+            "nameLocation": "389:7:36",
+            "parameters": {
+              "id": 45590,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "396:2:36"
+            },
+            "returnParameters": {
+              "id": 45593,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45592,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45594,
+                  "src": "422:7:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45591,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "422:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "421:9:36"
+            },
+            "scope": 45598,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 45597,
+            "nodeType": "FunctionDefinition",
+            "src": "437:38:36",
+            "nodes": [],
+            "functionSelector": "be71248a",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "payWinner",
+            "nameLocation": "446:9:36",
+            "parameters": {
+              "id": 45595,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "455:2:36"
+            },
+            "returnParameters": {
+              "id": 45596,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "474:0:36"
+            },
+            "scope": 45598,
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IWager",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          45598
+        ],
+        "name": "IWager",
+        "nameLocation": "69:6:36",
+        "scope": 45599,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 36
+}
