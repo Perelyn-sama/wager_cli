@@ -15,3 +15,9 @@ set_bet_amount:
 
 provide_outcome:
 	cargo run  -- provide_outcome 0x524f8b01f86125dbc5fa43c1dba2495410c63906bcda01430883ccb28e748a2b
+
+submit_bet:
+	cargo run  -- submit_bet 0x524f8b01f86125dbc5fa43c1dba2495410c63906bcda01430883ccb28e748a2b
+
+install:
+	cargo install .
