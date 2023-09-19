@@ -1,13 +1,18 @@
-use ethers::prelude::*;
 use eyre::Result;
 use std::{fs, str::FromStr, sync::Arc};
 use wager_cli::prelude::*;
 extern crate dotenv;
 use ethers::utils::parse_ether;
+use ethers::{
+    abi::Detokenize,
+    prelude::{builders::ContractCall, *},
+};
 use std::fs::File;
 use std::io::Write;
 
 use clap::{arg, Command};
+
+use eyre::ContextCompat;
 
 #[macro_use]
 extern crate serde_derive;
@@ -18,13 +23,6 @@ struct Data {
     players: Vec<String>,
 }
 
-// struct Instance {
-//     contract_address: Address,
-//     players_address: Vec<Address>,
-//     // wager: Wager<M>,
-//     // instance: Wager<SignerMiddleware<Provider<Provider>, Wallet<SigningKey>>>,
-// }
-
 fn cli() -> Command {
     Command::new("wager_cli")
         .about("A basic CLi for interacting with Wager contract")
@@ -33,7 +31,7 @@ fn cli() -> Command {
         .allow_external_subcommands(true)
         .subcommand(
             Command::new("add")
-                .about("adds players to the wager")
+                .about("adds players")
                 .arg_required_else_help(true)
                 .arg(
                     arg!(<PLAYERS> ... "Players to add").value_parser(clap::value_parser!(String)),
@@ -57,13 +55,19 @@ fn cli() -> Command {
         .subcommand(
             Command::new("set_bet_amount")
                 .about("set bet amount")
-                .arg(arg!(<AMOUNT> "The remote to clone"))
+                .arg(arg!(<AMOUNT> "bet amount"))
                 .arg_required_else_help(true),
         )
         .subcommand(
             Command::new("provide_outcome")
-                .about("provide outcome of the wager")
+                .about("provide outcome")
                 .arg(arg!(<OUTCOME> "Outcome for the wager"))
+                .arg_required_else_help(true),
+        )
+        .subcommand(
+            Command::new("submit_bet")
+                .about("submit your bet")
+                .arg(arg!(<BET> "Player's bet"))
                 .arg_required_else_help(true),
         )
 }
@@ -80,7 +84,9 @@ async fn main() -> Result<()> {
     let provider = Provider::<Http>::try_from(rpc_url).unwrap();
     let wallet: LocalWallet = private_key.parse()?;
 
-    let signer_middleware = SignerMiddleware::new(provider, wallet);
+    let signer_middleware = SignerMiddleware::new_with_provider_chain(provider, wallet)
+        .await
+        .unwrap();
 
     let client = Arc::new(signer_middleware);
 
@@ -113,7 +119,9 @@ async fn main() -> Result<()> {
 
             store_as_json(data);
 
-            wager.add_players(players_addr).await?;
+            send(wager.add_players(players_addr)).await?;
+
+            println!("players added");
         }
         Some(("show", _)) => match read_from_json() {
             Some(players) => println!("players: {:?}", players),
@@ -131,7 +139,6 @@ async fn main() -> Result<()> {
                 }
                 None => println!("Players have not been added yet"),
             }
-            // fs::remove_file("players.json").expect("file does not exist yet");
             println!("deleting players");
         }
         Some(("balance", _)) => {
@@ -143,7 +150,7 @@ async fn main() -> Result<()> {
             let amount_in_wei: U256 =
                 parse_ether(U256::from_str(amount).expect("invalid U256")).unwrap();
 
-            wager.set_bet_amount(amount_in_wei).await?;
+            send(wager.set_bet_amount(amount_in_wei)).await?;
 
             println!("setting bet amount to {amount_in_wei}");
         }
@@ -153,9 +160,19 @@ async fn main() -> Result<()> {
             // Convert the string to H256
             let hash: H256 = outcome.parse().expect("Failed to parse hex string");
 
-            // wager.provide_outcome(hash.into()).await?;
+            send(wager.provide_outcome(hash.into())).await?;
 
-            println!("setting outcome to {hash}");
+            println!("Outcome set to {hash}");
+        }
+        Some(("submit_bet", sub_matches)) => {
+            let outcome = sub_matches.get_one::<String>("BET").expect("required");
+
+            // Convert the string to H256
+            let hash: H256 = outcome.parse().expect("Failed to parse hex string");
+
+            send(wager.submit_bet(hash.into())).await?;
+
+            println!("submitting bet: {hash}");
         }
         _ => {
             println!("invalid command");
@@ -187,4 +204,14 @@ fn read_from_json() -> Option<Data> {
         }
         Err(_) => return None,
     }
+}
+
+async fn send<M: Middleware + 'static, D: Detokenize>(
+    call: ContractCall<M, D>,
+) -> eyre::Result<TransactionReceipt> {
+    let pending_tx = call.send().await?;
+    println!("Transaction sent successfully, awaiting inclusion...");
+    pending_tx
+        .await?
+        .wrap_err("transaction was dropped from mempool")
 }
