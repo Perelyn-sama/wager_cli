@@ -46,3 +46,5 @@ Commands:
 Options:
   -h, --help  Print help
 ```
+
+You can also check out the [Makefile](./makefile) to see how to run commands
