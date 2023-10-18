@@ -18,7 +18,7 @@ First you have to clone this repo to your machine:
 ```bash
 git clone https://github.com/Perelyn-sama/wager_cli
 ```
-Next, you have to enter the `wager_cli` then install it 
+Next, you have to enter the `wager_cli` directory then install it 
 ```bash
 cd wager_cli 
 cargo install .
